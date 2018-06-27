@@ -10,7 +10,7 @@ RUN set -eux && \
       | tar xz && \
     cd cmake-3.11.4 && \
     ./configure --system-curl && \
-    make -j4 && \
+    make -j2 && \
     make install && \
     `# Install clang 5.0.2` \
     wget http://releases.llvm.org/5.0.2/llvm-5.0.2.src.tar.xz -O - \
@@ -21,10 +21,6 @@ RUN set -eux && \
       | xz -dc \
       | tar xp && \
     mv cfe-5.0.2.src llvm/tools/clang && \
-    wget http://releases.llvm.org/5.0.2/clang-tools-extra-5.0.2.src.tar.xz -O - \
-      | xz -dc \
-      | tar xp && \
-    mv clang-tools-extra-5.0.2.src llvm/tools/clang/tools/extra && \
     mkdir llvm.build && \
     cd llvm.build && \
     cmake -G "Unix Makefiles" \
@@ -33,7 +29,7 @@ RUN set -eux && \
       -DPYTHON_EXECUTABLE=/opt/python/cp27-cp27m/bin/python \
       -DPYTHON_INCLUDE_DIR=/opt/python/cp27-cp27m/include/python2.7 \
       ../llvm && \
-    make -j4 && \
+    make -j2 && \
     make install && \
     `# Remove garbages` \
     cd && \
