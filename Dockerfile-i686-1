@@ -28,13 +28,5 @@ RUN set -eux && \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
       -DPYTHON_EXECUTABLE=/opt/python/cp27-cp27m/bin/python \
       -DPYTHON_INCLUDE_DIR=/opt/python/cp27-cp27m/include/python2.7 \
-      ../llvm && \
-    make -j2 && \
-    make install && \
-    `# Remove garbages` \
-    cd && \
-    rm -rf * && \
-    yum erase -y zlib-devel gcc44 gcc44-c++ xz && \
-    rm -rf /var/cache/yum/* && \
-    yum clean all
+      ../llvm
 

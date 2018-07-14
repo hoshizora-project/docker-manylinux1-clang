@@ -1,0 +1,16 @@
+FROM hoshizora/manylinux1-clang_i686_intermediate1
+
+LABEL maintainer='amaya <mail@sapphire.in.net>'
+
+RUN set -eux && \
+    `# Install clang 5.0.2` \
+    cd llvm.build && \
+    make -j2 && \
+    make install && \
+    `# Remove garbages` \
+    cd && \
+    rm -rf * && \
+    yum erase -y zlib-devel gcc44 gcc44-c++ xz && \
+    rm -rf /var/cache/yum/* && \
+    yum clean all
+
