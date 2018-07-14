@@ -2,6 +2,8 @@ FROM hoshizora/manylinux1-clang_x86_64_intermediate1
 
 LABEL maintainer='amaya <mail@sapphire.in.net>'
 
+WORKDIR /root
+
 RUN set -eux && \
     `# Install clang 5.0.2 (cont.)` \
     cd llvm.build && \

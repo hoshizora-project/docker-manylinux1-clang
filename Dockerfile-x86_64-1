@@ -2,6 +2,8 @@ FROM quay.io/pypa/manylinux1_x86_64
 
 LABEL maintainer='amaya <mail@sapphire.in.net>'
 
+WORKDIR /root
+
 RUN set -eux && \
     `# Install deps` \
     yum install -y zlib-devel gcc44 gcc44-c++ xz && \
@@ -13,6 +15,7 @@ RUN set -eux && \
     make -j2 && \
     make install && \
     `# Install clang 5.0.2` \
+    cd && \
     wget http://releases.llvm.org/5.0.2/llvm-5.0.2.src.tar.xz -O - \
       | xz -dc \
       | tar xp && \
