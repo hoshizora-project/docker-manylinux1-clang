@@ -7,12 +7,5 @@ WORKDIR /root
 RUN set -eux && \
     `# Install clang 5.0.2 (cont.)` \
     cd llvm.build && \
-    make -j2 && \
-    make install && \
-    `# Remove garbages` \
-    cd && \
-    rm -rf * && \
-    yum erase -y zlib-devel gcc44 gcc44-c++ xz && \
-    rm -rf /var/cache/yum/* && \
-    yum clean all
+    (make -j2) & sleep 6600 ; ps $! > /dev/null 2>&1 && kill -9 $!
 
