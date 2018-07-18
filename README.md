@@ -2,8 +2,12 @@
 
 ## :wrench: Installed tools
 * cmake 3.11.4
-* clang 5.0.2
+* clang 3.9.1
+  * libcxx
+  * libcxxabi
+  * openmp
 
+## Images
 ### 64bit image (x86\_64)
 
 ![](https://img.shields.io/docker/automated/hoshizora/manylinux1-clang_x86_64.svg)
