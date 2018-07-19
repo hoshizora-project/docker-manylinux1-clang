@@ -6,7 +6,7 @@ WORKDIR /root
 
 RUN set -eux && \
     `# Install deps` \
-    yum install -y zlib-devel xz && \
+    yum install -y zlib-devel xz gcc && \
     `# Install clang 4.0.1` \
     cd && \
     wget http://releases.llvm.org/4.0.1/llvm-4.0.1.src.tar.xz -O - \
