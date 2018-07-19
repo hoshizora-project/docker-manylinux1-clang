@@ -14,6 +14,7 @@ RUN set -eux && \
     ./configure --system-curl && \
     make -j2 && \
     make install && \
+    mv install_manifest.txt /usr/local/share/cmake-3.11 && \
     `# Install clang 3.9.1` \
     cd && \
     wget http://releases.llvm.org/3.9.1/llvm-3.9.1.src.tar.xz -O - \
