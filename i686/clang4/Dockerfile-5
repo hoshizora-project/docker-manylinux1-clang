@@ -10,7 +10,7 @@ RUN set -eux && \
     make -j2 && \
     `# Uninstall clang 3.9.1` \
     mv /usr/local/share/clang/install_manifest.txt /tmp && \
-    xargs rm < /tmp/install_manifest.txt && \
+    xargs rm -rf < /tmp/install_manifest.txt && \
     rm /tmp/install_manifest.txt && \
     make install && \
     mv install_manifest.txt /usr/local/share/clang && \
