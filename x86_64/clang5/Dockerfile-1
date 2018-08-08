@@ -33,10 +33,11 @@ RUN set -eux && \
     cd llvm-build && \
     cmake -G "Unix Makefiles" \
       -DCMAKE_BUILD_TYPE=Release \
-      -DLLVM_ENABLE_LIBCXX=true \
       -DCMAKE_C_COMPILER=clang \
       -DCMAKE_CXX_COMPILER=clang++ \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DLLVM_ENABLE_LIBCXX=true \
+      -DCLANG_DEFAULT_CXX_STDLIB=libc++ \
       -DPYTHON_EXECUTABLE=/opt/python/cp27-cp27m/bin/python \
       ../llvm
 
