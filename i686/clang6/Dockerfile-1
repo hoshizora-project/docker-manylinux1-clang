@@ -9,23 +9,23 @@ RUN set -eux && \
     yum install -y zlib-devel xz gcc && \
     `# Install clang 6.0.1` \
     cd && \
-    wget http://releases.llvm.org/6.0.1/llvm-6.0.1.src.tar.xz -O - \
+    curl http://releases.llvm.org/6.0.1/llvm-6.0.1.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv llvm-6.0.1.src llvm && \
-    wget http://releases.llvm.org/6.0.1/cfe-6.0.1.src.tar.xz -O - \
+    curl http://releases.llvm.org/6.0.1/cfe-6.0.1.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv cfe-6.0.1.src llvm/tools/clang && \
-    wget http://releases.llvm.org/6.0.1/libcxx-6.0.1.src.tar.xz -O - \
+    curl http://releases.llvm.org/6.0.1/libcxx-6.0.1.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv libcxx-6.0.1.src llvm/projects/libcxx && \
-    wget http://releases.llvm.org/6.0.1/libcxxabi-6.0.1.src.tar.xz -O - \
+    curl http://releases.llvm.org/6.0.1/libcxxabi-6.0.1.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv libcxxabi-6.0.1.src llvm/projects/libcxxabi && \
-    wget http://releases.llvm.org/6.0.1/openmp-6.0.1.src.tar.xz -O - \
+    curl http://releases.llvm.org/6.0.1/openmp-6.0.1.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv openmp-6.0.1.src llvm/projects/openmp && \

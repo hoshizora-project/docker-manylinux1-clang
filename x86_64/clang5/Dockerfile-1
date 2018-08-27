@@ -9,23 +9,23 @@ RUN set -eux && \
     yum install -y zlib-devel xz gcc && \
     `# Install clang 5.0.2` \
     cd && \
-    wget http://releases.llvm.org/5.0.2/llvm-5.0.2.src.tar.xz -O - \
+    curl http://releases.llvm.org/5.0.2/llvm-5.0.2.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv llvm-5.0.2.src llvm && \
-    wget http://releases.llvm.org/5.0.2/cfe-5.0.2.src.tar.xz -O - \
+    curl http://releases.llvm.org/5.0.2/cfe-5.0.2.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv cfe-5.0.2.src llvm/tools/clang && \
-    wget http://releases.llvm.org/5.0.2/libcxx-5.0.2.src.tar.xz -O - \
+    curl http://releases.llvm.org/5.0.2/libcxx-5.0.2.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv libcxx-5.0.2.src llvm/projects/libcxx && \
-    wget http://releases.llvm.org/5.0.2/libcxxabi-5.0.2.src.tar.xz -O - \
+    curl http://releases.llvm.org/5.0.2/libcxxabi-5.0.2.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv libcxxabi-5.0.2.src llvm/projects/libcxxabi && \
-    wget http://releases.llvm.org/5.0.2/openmp-5.0.2.src.tar.xz -O - \
+    curl http://releases.llvm.org/5.0.2/openmp-5.0.2.src.tar.xz \
       | xz -dc \
       | tar xp && \
     mv openmp-5.0.2.src llvm/projects/openmp && \
